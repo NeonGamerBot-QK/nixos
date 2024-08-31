@@ -55,5 +55,3 @@ Catppuccin.catppuccin-vsc
     ];
   };
     }
-
-}
