@@ -17,7 +17,7 @@
     ...
   }: {
     nixosConfigurations = {
-      nixos = nixpkgs.lib.nixosSystem {
+      nixosPC = nixpkgs.lib.nixosSystem {
    specialArgs = { inherit inputs; }; # this is the important part
         system = "x86_64-linux";
         modules = [
