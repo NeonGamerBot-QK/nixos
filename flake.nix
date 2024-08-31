@@ -34,7 +34,6 @@
           home-manager.nixosModules.home-manager
           {
             imports = [
-  ./parts/vscode.nix
             ];
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
