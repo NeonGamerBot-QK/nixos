@@ -10,11 +10,16 @@
 # hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable; services.xserver.videoDrivers = [ "nvidia" ]; 
   # Bootloader.
   # boot.loader.systemd-boot.enable = true; 
+  boot.loader.grub.enable = true;
+boot.loader.grub.efiSupport = true;
+boot.loader.grub.device = "nodev";
+boot.loader.efi.canTouchEfiVariables = true;
+boot.loader.efi.efiSysMountPoint = "/boot/efi";
   # boot.loader.efi.canTouchEfiVariables = true;
   # enable grub (im cooked if this dosent work)
-boot.loader.grub.enable = true;
+# boot.loader.grub.enable = true;
 # @see https://discourse.nixos.org/t/configure-grub-on-efi-system/2926/3
-boot.loader.grub.device = "nodev";
+# boot.loader.grub.device = "nodev";
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
