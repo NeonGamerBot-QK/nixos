@@ -33,8 +33,8 @@
 }
           home-manager.nixosModules.home-manager
           {
-            imports = [
-            ];
+            home-manager.backupFileExtension = "hm-bak";
+         
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.neon = { pkgs, ... }: {
@@ -68,9 +68,10 @@ shotman
       vesktop
           zoom-us
 vscode
-
-
               ];
+                 imports = [
+              ./parts/vscode.nix
+            ];
               home.file."/home/neon/.uptime-url" = {
   text = ''<uptime-url-here> --extra-params'';
 };

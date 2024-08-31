@@ -5,6 +5,7 @@
 { config, pkgs, ... }:
 
 {
+ 
       # gpgKey =
 # drivers
 # hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable; services.xserver.videoDrivers = [ "nvidia" ]; 
@@ -89,7 +90,6 @@ users.users.neon.openssh.authorizedKeys.keys = [
   wget
 spotify
 kitty
-vscode
 unzip
 neofetch
 fastfetch

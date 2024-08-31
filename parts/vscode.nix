@@ -26,8 +26,8 @@
         };
        extensions = with pkgs.vscode-extensions; [
         ## Themes
-      # Catppuccin.catppuccin-vsc
-      # Catppuccin.catppuccin-vsc-icons
+      catppuccin.catppuccin-vsc
+      catppuccin.catppuccin-vsc-icons
       ## Git
       eamodio.gitlens
 
@@ -51,7 +51,10 @@
       mkhl.direnv
       editorconfig.editorconfig
       esbenp.prettier-vscode
-      usernamehw.errorlens
+      usernamehw.errorlens 
+      # wakaTime.vscode-wakatime
+    # GitHub.copilot
+    # GitHub.copilot-chat
     ];
   };
     }
