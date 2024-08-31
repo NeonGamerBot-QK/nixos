@@ -26,8 +26,8 @@
         };
        extensions = with pkgs.vscode-extensions; [
         ## Themes
-      Catppuccin.catppuccin-vsc
-      Catppuccin.catppuccin-vsc-icons
+      # Catppuccin.catppuccin-vsc
+      # Catppuccin.catppuccin-vsc-icons
       ## Git
       eamodio.gitlens
 
