@@ -12,7 +12,7 @@
   "editor.fontWeight" = "500";
 
   "files.associations" = {
-    "*.ejs" = "html"
+    "*.ejs" = "html";
   };
 # Editor
   "editor.cursorStyle" = "block-outline";
