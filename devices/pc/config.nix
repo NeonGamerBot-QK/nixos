@@ -20,7 +20,6 @@
  programs.git.config  = {
       userName = "Neon";
       userEmail = "neon@saahild.com";
-
     };   
 
   # Open ports in the firewall.
