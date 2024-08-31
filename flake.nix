@@ -66,6 +66,8 @@ shotman
       # social media 
       vesktop
           zoom-us
+vscode
+
 
               ];
               home.file."/home/neon/.uptime-url" = {

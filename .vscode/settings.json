@@ -6,4 +6,5 @@
     "nix.enableLanguageServer": true,
     "nixEnvSelector.nixFile": "${workspaceRoot}/flake.nix",
     "nix.serverPath": "nixd",
+    "editor.fontSize": 15
 }
