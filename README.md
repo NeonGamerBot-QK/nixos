@@ -4,4 +4,3 @@
 ![Shell Bash](https://img.shields.io/badge/editor-vscode-%23464748?style=flat-square)
 
 WIP.
-
