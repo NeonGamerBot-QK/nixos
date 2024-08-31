@@ -72,7 +72,7 @@ vscode
               ];
                  imports = [
               ./parts/vscode.nix
-              ./parts/wallpaper.nix
+          #    ./parts/wallpaper.nix
             ];
               home.file."/home/neon/.uptime-url" = {
   text = ''<uptime-url-here> --extra-params'';
