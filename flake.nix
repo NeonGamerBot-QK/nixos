@@ -26,7 +26,6 @@
         modules = [
           ./configuration.nix
 	./greetd.nix
-  ./parts/vscode.nix
  	./devices/pc/config.nix
       catppuccin.nixosModules.catppuccin {
  catppuccin.enable = true;
@@ -34,6 +33,9 @@
 }
           home-manager.nixosModules.home-manager
           {
+            imports = [
+  ./parts/vscode.nix
+            ];
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.neon = { pkgs, ... }: {
