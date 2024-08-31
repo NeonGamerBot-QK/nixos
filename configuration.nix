@@ -101,7 +101,15 @@ git
 tailscale
 gnupg
 oh-my-zsh
+cron
   ];
+    services.cron = {
+    enable = true;
+    systemCronJobs = [
+
+      "* * * * * curl $(cat ~/.uptime-url)"
+    ];
+  };
    programs.zsh = {
     enable = true;
     shellAliases = {
