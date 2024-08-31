@@ -10,10 +10,6 @@
   "editor.fontFamily" = "Fira Code";
   "editor.fontLigatures" = true;
   "editor.fontWeight" = "500";
-
-  "files.associations" = {
-    "*.ejs" = "html";
-  };
 # Editor
   "editor.cursorStyle" = "block-outline";
   "editor.defaultColorDecorators" = true;
