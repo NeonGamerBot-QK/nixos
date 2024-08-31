@@ -9,6 +9,7 @@
    hyprland.url = "github:hyprwm/Hyprland?submodules=1";
   };
 
+
   outputs = inputs@{
     self,
     nixpkgs,
@@ -35,7 +36,8 @@
               home.username = "neon";
               home.homeDirectory = "/home/neon";
               programs.home-manager.enable = true;
-              home.packages = with pkgs; [
+
+             home.packages = with pkgs; [
                 thunderbird
 mako
 wl-clipboard

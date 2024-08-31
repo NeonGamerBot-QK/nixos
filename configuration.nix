@@ -10,6 +10,7 @@
       ./hardware-configuration.nix
 #	./flake.nix
     ];
+      # gpgKey =
 # drivers
 # hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable; services.xserver.videoDrivers = [ "nvidia" ]; 
   # Bootloader.
@@ -126,10 +127,21 @@ tailscale
 gnupg
   ];
 
+
+		programs.gnupg.agent = {
+enable = true;
+# publicKeys = [
+# {source =  pkgs.fetchurl {
+#   url = "https://saahild.com/creds/public.gpg.";
+#   #sha256 = "xx";
+# }; trust = 5;}
+# ];
+};
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
    programs.mtr.enable = true;
-programs.gnupg.agent.enable = true;
+# programs.gnupg.agent.enable = true;
 
   # programs.gnupg.agent = {
   #   enable = true;
