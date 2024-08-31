@@ -65,7 +65,7 @@
  programs.hyprland.enable = true;
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
+   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -87,6 +87,7 @@
     isNormalUser = true;
     description = "neon";
     extraGroups = [ "networkmanager" "wheel" ];
+    hashedPassword = "$y$j9T$qzfdCskx/alpliRS9UXiT1$DaqY3cNO3/ll1uIYFtfKiEZBijj.OhhazOs85clr6T5";
     packages = with pkgs; [
       thunderbird
     ];
@@ -115,6 +116,9 @@ wofi
 waybar
 playerctl
 git
+gpg
+tailscale
+gnupg
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
