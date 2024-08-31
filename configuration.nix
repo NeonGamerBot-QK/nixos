@@ -10,7 +10,7 @@
 # hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable; services.xserver.videoDrivers = [ "nvidia" ]; 
   # Bootloader.
   # boot.loader.systemd-boot.enable = true; 
-  boot.loader.efi.canTouchEfiVariables = true;
+  # boot.loader.efi.canTouchEfiVariables = true;
   # enable grub (im cooked if this dosent work)
 boot.loader.grub.enable = true;
 # @see https://discourse.nixos.org/t/configure-grub-on-efi-system/2926/3
