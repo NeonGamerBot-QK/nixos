@@ -53,8 +53,21 @@ shotman
     xdg-utils
     xdg-desktop-portal
     xdg-desktop-portal-gtk
+          # other apps
+      mpv
+      obsidian
+      inkscape-with-extensions
+      leela
+      handbrake
+
+      # social media 
+      vesktop
+          zoom-us
 
               ];
+              home.file."/home/neon/.uptime-url" = {
+  text = ''<uptime-url-here> --extra-params'';
+};
               home.stateVersion = "23.11";
             };
           }
