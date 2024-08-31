@@ -24,6 +24,7 @@
         modules = [
           ./configuration.nix
 	./greetd.nix
+ 	./devices/pc/config.nix
       catppuccin.nixosModules.catppuccin {
  catppuccin.enable = true;
   catppuccin.flavor = "mocha";
