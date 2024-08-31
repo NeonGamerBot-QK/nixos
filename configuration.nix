@@ -89,7 +89,7 @@ users.users.neon.openssh.authorizedKeys.keys = [
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.neon = {
     isNormalUser = true;
-    description = "My user Neon :3";
+    description = "My user Neon ;3";
   
     extraGroups = [ "networkmanager" "wheel" ];
     hashedPassword = "$y$j9T$qzfdCskx/alpliRS9UXiT1$DaqY3cNO3/ll1uIYFtfKiEZBijj.OhhazOs85clr6T5";
