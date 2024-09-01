@@ -4,3 +4,23 @@
 .github/CODEOWNERS @zeon-neon @NeonGamerBot-QK
 # Zeons directory
 /zeon/ @zeon-neon
+.github/workflows/test.yml @NeonGamerBot-QK
+.github/zeon/commit.yml @NeonGamerBot-QK
+.github/zeon/pr.yml @NeonGamerBot-QK
+.github/zeon/templates/pr/docs-message.md @NeonGamerBot-QK
+.github/zeon/templates/pr/feat-message.md @NeonGamerBot-QK
+.github/zeon/templates/pr/fix-message.md @NeonGamerBot-QK
+README.md @NeonGamerBot-QK
+all_config.nix @NeonGamerBot-QK
+devices/pc/config.nix @NeonGamerBot-QK
+flake.nix @NeonGamerBot-QK
+parts/greetd.nix @NeonGamerBot-QK
+parts/vscode.nix @NeonGamerBot-QK
+parts/wallpaper.nix @NeonGamerBot-QK
+parts/waybar.nix @NeonGamerBot-QK
+pc-configuration.nix @NeonGamerBot-QK
+scripts/build.sh @NeonGamerBot-QK
+scripts/build_nixos.sh @NeonGamerBot-QK
+scripts/build_pc_git.sh @NeonGamerBot-QK
+scripts/build_with_git.sh @NeonGamerBot-QK
+scripts/cleanup_old.sh @NeonGamerBot-QK
