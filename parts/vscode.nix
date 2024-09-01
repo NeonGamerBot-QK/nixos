@@ -52,9 +52,6 @@
       editorconfig.editorconfig
       esbenp.prettier-vscode
       usernamehw.errorlens 
-      # wakaTime.vscode-wakatime
-    # GitHub.copilot
-    # GitHub.copilot-chat
     ];
   };
     }

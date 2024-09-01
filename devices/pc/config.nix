@@ -5,11 +5,9 @@
   imports =
     [ # Include the results of the hardware scan.
       ../../pc-configuration.nix
-#	./flake.nix
     ];
   # corsair
   hardware.ckb-next.enable = true; 
-#  networking.hostName = "pc"; # Define your hostname.
 
  
   # Set your time zone.

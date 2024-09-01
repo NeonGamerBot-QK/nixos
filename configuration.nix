@@ -6,18 +6,13 @@
 
 {
  
-      # gpgKey =
 # drivers
-# hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable; services.xserver.videoDrivers = [ "nvidia" ]; 
   # Bootloader.
   boot.loader.systemd-boot.enable = true; 
   boot.loader.efi.canTouchEfiVariables = true;
   # enable grub (im cooked if this dosent work)
-# boot.loader.grub.enable = true;
 # @see https://discourse.nixos.org/t/configure-grub-on-efi-system/2926/3
-# boot.loader.grub.device = "nodev";
   networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -45,7 +40,6 @@
 #	programs.sway.enable = true;
 	security.polkit.enable = true;
 	hardware.opengl.enable = true;
-	#sound.enable = true;
   # Enable CUPS to print documents.
   services.printing.enable = true;
  programs.hyprland.enable = true;

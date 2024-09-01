@@ -14,6 +14,4 @@
     style = builtins.readFile ../assets/waybar/style.css;
   };
 
-  # home.file.".config/waybar/config".source = ../assets/waybar/config;
-  # home.file.".config/waybar/style.css".source = ../assets/waybar/style.css;
 }
