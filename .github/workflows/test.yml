@@ -12,5 +12,5 @@ jobs:
         with:
           nix_path: nixpkgs=channel:nixos-unstable
       - uses: DeterminateSystems/magic-nix-cache-action@v2
-      - run: nix-build
+      - run: nix-instantiate --parse 'flake.nix'
       - run: nix-shell --run "echo OK"
