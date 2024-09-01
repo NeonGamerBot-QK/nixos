@@ -24,6 +24,7 @@
       "workbench.list.smoothScrolling" = true;
       "editor.renderWhitespace" = "all";
     };
-   
+      extensions = pkgs.vscode-utils.extensionsFromVscodeMarketplace
+     [];
   };
 }
