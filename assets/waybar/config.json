@@ -35,8 +35,6 @@
         "custom/l_end",
         "backlight",
         "network",
-        "pulseaudio",
-        "pulseaudio#microphone",
         "custom/updates",
         "custom/keybindhint",
         "custom/r_end",
