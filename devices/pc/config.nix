@@ -22,6 +22,8 @@
       userEmail = "neon@saahild.com";
     };   
 
+
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];

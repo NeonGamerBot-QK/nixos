@@ -72,13 +72,21 @@ vscode
               ];
                  imports = [
               ./parts/vscode.nix
+              ./parts/waybar.nix
           #    ./parts/wallpaper.nix
             ];
               home.file."/home/neon/.uptime-url" = {
   text = ''<uptime-url-here> --extra-params'';
 };
 
+  home.pointerCursor = {
+    gtk.enable = true;
+    x11.enable = true;
 
+    package = pkgs.material-cursors;
+    name = "material_cursors";
+    size = 24;
+  };
               home.stateVersion = "23.11";
             };
           }
