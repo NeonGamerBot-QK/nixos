@@ -101,14 +101,16 @@
     lm_sensors
     github-desktop
     gnome-keyring
+    wakatime
   ];
   services.cron = {
     enable = true;
     systemCronJobs = [
-
       "* * * * * curl $(cat ~/.uptime-url)"
+      "* * * * * echo e > /home/neon/.cron-job"
     ];
   };
+    programs.nix-ld.enable = true;
   programs.zsh = {
     enable = true;
     shellAliases = {
