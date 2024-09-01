@@ -86,6 +86,7 @@
     spotify
     kitty
     unzip
+    zip
     neofetch
     fastfetch
     rofi
