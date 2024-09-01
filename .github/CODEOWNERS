@@ -24,3 +24,4 @@ scripts/build_nixos.sh @NeonGamerBot-QK
 scripts/build_pc_git.sh @NeonGamerBot-QK
 scripts/build_with_git.sh @NeonGamerBot-QK
 scripts/cleanup_old.sh @NeonGamerBot-QK
+README.md @NeonGamerBot-QK
