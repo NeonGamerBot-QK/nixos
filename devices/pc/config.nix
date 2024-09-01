@@ -1,24 +1,24 @@
-
 { config, pkgs, ... }:
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ../../pc-configuration.nix
     ];
   # corsair
-  hardware.ckb-next.enable = true; 
+  hardware.ckb-next.enable = true;
 
- 
+
   # Set your time zone.
   time.timeZone = "America/New_York";
 
   services.tailscale.enable = true;
   services.tailscale.useRoutingFeatures = "client";
- programs.git.config  = {
-      userName = "Neon";
-      userEmail = "neon@saahild.com";
-    };   
+  programs.git.config = {
+    userName = "Neon";
+    userEmail = "neon@saahild.com";
+  };
 
 
 
@@ -26,5 +26,5 @@
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-   networking.firewall.enable = false;
+  networking.firewall.enable = false;
 }

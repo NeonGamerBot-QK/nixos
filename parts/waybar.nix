@@ -13,5 +13,4 @@
 
     style = builtins.readFile ../assets/waybar/style.css;
   };
-
 }
