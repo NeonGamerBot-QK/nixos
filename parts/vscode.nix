@@ -24,34 +24,6 @@
       "workbench.list.smoothScrolling" = true;
       "editor.renderWhitespace" = "all";
     };
-    extensions = with pkgs.vscode-extensions; [
-      ## Themes
-       pkgs.vscode-extensions.catppuccin.catppuccin-vsc
-       pkgs.vscode-extensions.catppuccin.catppuccin-vsc-icons
-      ## Git
-      eamodio.gitlens
-
-      ## Nix
-      jnoortheen.nix-ide
-
-      ## C/C++
-      ms-vscode.cpptools
-
-      ## Go
-      golang.go
-
-      ## Rust
-      rust-lang.rust-analyzer
-      tamasfe.even-better-toml
-
-      ## Markdown
-      yzhang.markdown-all-in-one
-
-      ## Misc
-      mkhl.direnv
-      editorconfig.editorconfig
-      esbenp.prettier-vscode
-      usernamehw.errorlens
-    ];
+   
   };
 }
