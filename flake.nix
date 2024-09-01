@@ -69,6 +69,32 @@ shotman
           zoom-us
 vscode
 
+    # basic sysadmin stuff
+    jq # json parsing
+    psmisc # processes
+    btop # system
+    nload # network
+    wavemon # wifi
+    ncdu # storage
+    gparted # disks
+    nvtop # gpu
+
+    appimage-run
+
+    # https://github.com/NixOS/nixpkgs/issues/206378
+    alsa-oss
+    blueberry
+
+    # additional tumbler support
+    webp-pixbuf-loader # webp
+    poppler_gi # adobe pdf
+    evince # pdf
+    ffmpegthumbnailer # videos
+    ftgl # font
+    libgsf # .odf
+    nufraw-thumbnailer # .raw
+    gnome-epub-thumbnailer # .epub, .mobi
+    f3d
               ];
                  imports = [
               ./parts/vscode.nix
