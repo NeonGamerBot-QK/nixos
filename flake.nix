@@ -96,6 +96,8 @@
                   nufraw-thumbnailer # .raw
                   gnome-epub-thumbnailer # .epub, .mobi
                   f3d
+                  fontconfig
+                  ani-cli
                 ];
                 imports = [
                   ./parts/vscode.nix

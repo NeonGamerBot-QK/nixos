@@ -1,2 +1,2 @@
-bash build_with_git.sh
-bash build_nixos.sh
+bash ./build_with_git.sh
+bash ./build_nixos.sh

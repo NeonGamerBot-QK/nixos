@@ -1,1 +1,1 @@
-bash build_$(hostname).sh
+bash ./build_$(hostname).sh

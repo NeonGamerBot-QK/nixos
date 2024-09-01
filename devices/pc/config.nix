@@ -8,6 +8,8 @@
     ];
   # corsair
   hardware.ckb-next.enable = true;
+#  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable; 
+#  services.xserver.videoDrivers = [ "nvidia" ]; 
 
 
   # Set your time zone.
