@@ -1,8 +1,8 @@
 nix-env --list-generations
 
-nix-collect-garbage  --delete-old
+nix-collect-garbage --delete-old
 
-nix-collect-garbage  --delete-generations 1 2 3
+nix-collect-garbage --delete-generations 1 2 3
 
 # recommeneded to sometimes run as sudo to collect additional garbage
 sudo nix-collect-garbage -d
