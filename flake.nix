@@ -24,8 +24,8 @@
    specialArgs = { inherit inputs; }; # this is the important part
         system = "x86_64-linux";
         modules = [
-          ./configuration.nix
-	./greetd.nix
+          ./all_config.nix
+	./parts/greetd.nix
  	./devices/pc/config.nix
       catppuccin.nixosModules.catppuccin {
  catppuccin.enable = true;
