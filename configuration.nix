@@ -106,6 +106,7 @@ cron
 jq 
 lm_sensors
 github-desktop
+gnome-keyring
   ];
     services.cron = {
     enable = true;
