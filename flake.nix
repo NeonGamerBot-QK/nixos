@@ -126,14 +126,23 @@
                   f3d
                   fontconfig
                   ani-cli
+                  ## added by .local/share/bin 
+                  wlogout
+                  envsubst
+                  hyprshade
+                  parallel
+                  flatpak
+                  libnotify
                 ];
                 imports = [
                   ./parts/vscode.nix
                   ./parts/waybar.nix
+                  ./parts/oh-my-zsh.nix
                 ];
                 home.file."/home/neon/.uptime-url" = {
                   text = ''<uptime-url-here> --extra-params'';
                 };
+  home.sessionVariables.NIXOS_OZONE_WL = "1";
 
                 home.pointerCursor = {
                   gtk.enable = true;

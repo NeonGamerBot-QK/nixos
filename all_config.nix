@@ -86,15 +86,23 @@ boot.loader.efi.efiSysMountPoint = "/boot";
   users.users.neon = {
     isNormalUser = true;
     description = "Neon ;3";
-
     extraGroups = [ "networkmanager" "wheel" ];
     hashedPassword = "$y$j9T$qzfdCskx/alpliRS9UXiT1$DaqY3cNO3/ll1uIYFtfKiEZBijj.OhhazOs85clr6T5";
     packages = with pkgs; [
       thunderbird
     ];
+   ignoreShellProgramCheck = true;
     shell = pkgs.zsh;
   };
-
+  programs.zsh.interactiveShellInit = ''
+      # z - jump around
+      source ${pkgs.fetchurl {url = "https://github.com/rupa/z/raw/2ebe419ae18316c5597dd5fb84b5d8595ff1dde9/z.sh"; sha256 = "0ywpgk3ksjq7g30bqbhl9znz3jh6jfg8lxnbdbaiipzgsy41vi10";}}
+      export ZSH=${pkgs.oh-my-zsh}/share/oh-my-zsh
+      export ZSH_THEME="random"
+      plugins=(git)
+      source $ZSH/oh-my-zsh.sh
+    '';
+  programs.zsh.promptInit = "";
   # Install firefox.
   programs.firefox.enable = true;
   programs.waybar.enable = true;
@@ -127,6 +135,7 @@ boot.loader.efi.efiSysMountPoint = "/boot";
     github-desktop
     gnome-keyring
     wakatime
+    hyprlock
   ];
   services.cron = {
     enable = true;
@@ -136,23 +145,7 @@ boot.loader.efi.efiSysMountPoint = "/boot";
     ];
   };
     programs.nix-ld.enable = true;
-  programs.zsh = {
-    enable = true;
-    shellAliases = {
-      vim = "nvim";
-    };
-    enableCompletion = true;
-    enableAutosuggestions = true;
-    interactiveShellInit = ''
-      # z - jump around
-      source ${pkgs.fetchurl {url = "https://github.com/rupa/z/raw/2ebe419ae18316c5597dd5fb84b5d8595ff1dde9/z.sh"; sha256 = "0ywpgk3ksjq7g30bqbhl9znz3jh6jfg8lxnbdbaiipzgsy41vi10";}}
-      export ZSH=${pkgs.oh-my-zsh}/share/oh-my-zsh
-      export ZSH_THEME="lambda"
-      plugins=(git)
-      source $ZSH/oh-my-zsh.sh
-    '';
-    promptInit = "";
-  };
+
   services.passSecretService.enable = true;
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
