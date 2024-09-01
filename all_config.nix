@@ -27,14 +27,14 @@ boot.loader.efi.efiSysMountPoint = "/boot";
 #   }; 
 #   installPhase = "cp -r customize/nixos $out";
 # };
-  boot.loader.grub.theme = "${
-            (pkgs.fetchFromGitHub {
-              owner = "13atm01";
-              repo = "GRUB-Theme";
-              rev = "95bcc240162bce388ac2c0bec628b2aaa56e6cb8";
-              sha256 = "0xnx82fdyjqw89qmacwmlva9lis3zs8b0l1xi67njpypjy29sdnc";
-            })
-          }/Touhou\ Project/Touhou-project/";
+#  boot.loader.grub.theme = "${
+ #           (pkgs.fetchFromGitHub {
+  #            owner = "13atm01";
+   #           repo = "GRUB-Theme";
+    #          rev = "95bcc240162bce388ac2c0bec628b2aaa56e6cb8";
+     #         sha256 = "0xnx82fdyjqw89qmacwmlva9lis3zs8b0l1xi67njpypjy29sdnc";
+      #      })
+     #     }/Touhou\ Project/Touhou-project/";
   # enable grub (im cooked if this dosent work)
   # @see https://discourse.nixos.org/t/configure-grub-on-efi-system/2926/3
 
