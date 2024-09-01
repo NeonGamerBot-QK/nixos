@@ -3,121 +3,121 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
- catppuccin.url = "github:catppuccin/nix";
+    catppuccin.url = "github:catppuccin/nix";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-      nur.url = "github:nix-community/NUR";
+    nur.url = "github:nix-community/NUR";
 
-   hyprland.url = "github:hyprwm/Hyprland?submodules=1";
+    hyprland.url = "github:hyprwm/Hyprland?submodules=1";
   };
 
 
-  outputs = inputs@{
-    self,
-    nixpkgs,
-    home-manager,
-   catppuccin,
-    ...
-  }: {
-    nixosConfigurations = {
-      nixosPC = nixpkgs.lib.nixosSystem {
-   specialArgs = { inherit inputs; }; # this is the important part
-        system = "x86_64-linux";
-        modules = [
-          ./configuration.nix
-	./greetd.nix
- 	./devices/pc/config.nix
-      catppuccin.nixosModules.catppuccin {
- catppuccin.enable = true;
-  catppuccin.flavor = "mocha";
-}
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.backupFileExtension = "hm-bak";
-         
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.neon = { pkgs, ... }: {
-              home.username = "neon";
-              home.homeDirectory = "/home/neon";
-              programs.home-manager.enable = true;
+  outputs =
+    inputs@{ self
+    , nixpkgs
+    , home-manager
+    , catppuccin
+    , ...
+    }: {
+      nixosConfigurations = {
+        nixosPC = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; }; # this is the important part
+          system = "x86_64-linux";
+          modules = [
+            ./all_config.nix
+            ./parts/greetd.nix
+            ./devices/pc/config.nix
+            catppuccin.nixosModules.catppuccin
+            {
+              catppuccin.enable = true;
+              catppuccin.flavor = "mocha";
+            }
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.backupFileExtension = "hm-bak";
 
-             home.packages = with pkgs; [
-                thunderbird
-mako
-wl-clipboard
-shotman
- hyprpicker
- swaylock
-   hyprpaper
-    wofi
-# waybar
-    swww
-    grim
-    xdg-utils
-    xdg-desktop-portal
-    xdg-desktop-portal-gtk
-          # other apps
-      mpv
-      obsidian
-      inkscape-with-extensions
-      leela
-      handbrake
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.neon = { pkgs, ... }: {
+                home.username = "neon";
+                home.homeDirectory = "/home/neon";
+                programs.home-manager.enable = true;
 
-      # social media 
-      vesktop
-          zoom-us
-vscode
+                home.packages = with pkgs; [
+                  thunderbird
+                  mako
+                  wl-clipboard
+                  shotman
+                  hyprpicker
+                  swaylock
+                  hyprpaper
+                  wofi
+                  # waybar
+                  swww
+                  grim
+                  xdg-utils
+                  xdg-desktop-portal
+                  xdg-desktop-portal-gtk
+                  # other apps
+                  mpv
+                  obsidian
+                  inkscape-with-extensions
+                  leela
+                  handbrake
 
-    # basic sysadmin stuff
-    jq # json parsing
-    psmisc # processes
-    btop # system
-    nload # network
-    wavemon # wifi
-    ncdu # storage
-    gparted # disks
-    nvtop # gpu
+                  # social media 
+                  vesktop
+                  zoom-us
+                  vscode
 
-    appimage-run
+                  # basic sysadmin stuff
+                  jq # json parsing
+                  psmisc # processes
+                  btop # system
+                  nload # network
+                  wavemon # wifi
+                  ncdu # storage
+                  gparted # disks
+                  nvtop # gpu
 
-    # https://github.com/NixOS/nixpkgs/issues/206378
-    alsa-oss
-    blueberry
+                  appimage-run
 
-    # additional tumbler support
-    webp-pixbuf-loader # webp
-    poppler_gi # adobe pdf
-    evince # pdf
-    ffmpegthumbnailer # videos
-    ftgl # font
-    libgsf # .odf
-    nufraw-thumbnailer # .raw
-    gnome-epub-thumbnailer # .epub, .mobi
-    f3d
-              ];
-                 imports = [
-              ./parts/vscode.nix
-              ./parts/waybar.nix
-          #    ./parts/wallpaper.nix
-            ];
-              home.file."/home/neon/.uptime-url" = {
-  text = ''<uptime-url-here> --extra-params'';
-};
+                  # https://github.com/NixOS/nixpkgs/issues/206378
+                  alsa-oss
+                  blueberry
 
-  home.pointerCursor = {
-    gtk.enable = true;
-    x11.enable = true;
+                  # additional tumbler support
+                  webp-pixbuf-loader # webp
+                  poppler_gi # adobe pdf
+                  evince # pdf
+                  ffmpegthumbnailer # videos
+                  ftgl # font
+                  libgsf # .odf
+                  nufraw-thumbnailer # .raw
+                  gnome-epub-thumbnailer # .epub, .mobi
+                  f3d
+                ];
+                imports = [
+                  ./parts/vscode.nix
+                  ./parts/waybar.nix
+                ];
+                home.file."/home/neon/.uptime-url" = {
+                  text = ''<uptime-url-here> --extra-params'';
+                };
 
-    package = pkgs.material-cursors;
-    name = "material_cursors";
-    size = 24;
-  };
-              home.stateVersion = "23.11";
-            };
-          }
-        ];
+                home.pointerCursor = {
+                  gtk.enable = true;
+                  x11.enable = true;
+
+                  package = pkgs.material-cursors;
+                  name = "material_cursors";
+                  size = 24;
+                };
+                home.stateVersion = "23.11";
+              };
+            }
+          ];
+        };
       };
     };
-  };
 }

@@ -1,0 +1,3 @@
+autocodeowner: true # auto run zeon:codeowners
+aicomment: false # auto run zeon:ai_comment
+conventionalcommits: true

@@ -1,0 +1,5 @@
+# disable because AI tests are over
+ai-review:
+  automatic: true
+  rules: "if its in the directory parts you must not give a verdict and wait for a human to accept it. if it is in the directory devices you must decline it and state that new devices cant be added by pr unless they are NeonGamerBot-QK. if the directory is scripts make sure its a shell file. It cannot change anything with the .github or .vscode folder."
+  allow-it-to-create-action: false # If its verdict is yes it will merge it (with all other tests passing) otherwise it will close it.

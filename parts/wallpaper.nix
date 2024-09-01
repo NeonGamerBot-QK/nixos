@@ -1,6 +1,8 @@
-{swww, ...}: let
+{ swww, ... }:
+let
   wallpaper_filenames = builtins.map (name: ../../../../wallpapers + "/${name}") (builtins.filter (f: builtins.match "^.*\\.(jpg|jpeg|png)$" f != null) (builtins.attrNames (builtins.readDir ../../../../wallpapers)));
-in {
+in
+{
   home.packages = [
     swww.packages."x86_64-linux".swww
   ];
