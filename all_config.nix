@@ -8,8 +8,15 @@
 
   # drivers
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+#  boot.loader.systemd-boot.enable = true;
+ # boot.loader.efi.canTouchEfiVariables = true;
+      boot.loader.systemd-boot.enable = false;
+boot.loader.grub.enable = true;
+boot.loader.grub.device = "nodev";
+boot.loader.grub.useOSProber = true;
+boot.loader.grub.efiSupport = true;
+boot.loader.efi.canTouchEfiVariables = true;
+boot.loader.efi.efiSysMountPoint = "/boot";
   # enable grub (im cooked if this dosent work)
   # @see https://discourse.nixos.org/t/configure-grub-on-efi-system/2926/3
   networking.hostName = "nixos"; # Define your hostname.
