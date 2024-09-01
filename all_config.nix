@@ -17,17 +17,24 @@ boot.loader.grub.useOSProber = true;
 boot.loader.grub.efiSupport = true;
 boot.loader.efi.canTouchEfiVariables = true;
 boot.loader.efi.efiSysMountPoint = "/boot";
- boot.loader.grub.theme = pkgs.stdenv.mkDerivation {
-  pname = "distro-grub-themes";
-  version = "3.1";
-  src = pkgs.fetchFromGitHub {
-    owner = "AdisonCavani";
-    repo = "distro-grub-themes";
-    rev = "v3.1";
-    hash = "sha256-ZcoGbbOMDDwjLhsvs77C7G7vINQnprdfI37a9ccrmPs=";
-  };
-  installPhase = "cp -r customize/nixos $out";
-};
+#  boot.loader.grub.theme = pkgs.stdenv.mkDerivation {
+#   pname = "distro-grub-themes";
+#   version = "3.1";
+#   src = pkgs.fetchFromGitHub {
+#     owner = "AdisonCavani";
+#     repo = "distro-grub-themes";
+#     rev = "v3.1";
+#   }; 
+#   installPhase = "cp -r customize/nixos $out";
+# };
+  boot.loader.grub.theme = "${
+            (pkgs.fetchFromGitHub {
+              owner = "13atm01";
+              repo = "GRUB-Theme";
+              rev = "95bcc240162bce388ac2c0bec628b2aaa56e6cb8";
+              sha256 = "0xnx82fdyjqw89qmacwmlva9lis3zs8b0l1xi67njpypjy29sdnc";
+            })
+          }/Touhou\ Project/Touhou-project/";
   # enable grub (im cooked if this dosent work)
   # @see https://discourse.nixos.org/t/configure-grub-on-efi-system/2926/3
 

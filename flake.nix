@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    catppuccin.url = "github:catppuccin/nix";
+    # catppuccin.url = "github:catppuccin/nix";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nur.url = "github:nix-community/NUR";
@@ -16,7 +16,7 @@
     inputs@{ self
     , nixpkgs
     , home-manager
-    , catppuccin
+    # , catppuccin
     , ...
     }: {
       nixosConfigurations = {
@@ -27,11 +27,11 @@
             ./all_config.nix
             ./parts/greetd.nix
             ./devices/pc/config.nix
-            catppuccin.nixosModules.catppuccin
-            {
-              catppuccin.enable = true;
-              catppuccin.flavor = "mocha";
-            }
+            # catppuccin.nixosModules.catppuccin
+            # {
+            #   catppuccin.enable = true;
+            #   catppuccin.flavor = "mocha";
+            # }
             home-manager.nixosModules.home-manager
             {
               home-manager.backupFileExtension = "hm-bak";
