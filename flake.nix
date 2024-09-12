@@ -9,6 +9,7 @@
     nur.url = "github:nix-community/NUR";
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     hyprland.url = "github:hyprwm/Hyprland?submodules=1";
+    nixpkgs-ruby.url = "github:bobvanderlinden/nixpkgs-ruby";
   };
 
 
@@ -17,6 +18,7 @@
     , nixpkgs
     , home-manager
     , catppuccin
+    ,  nixpkgs-ruby  
     , ...
     }: {
       nixosConfigurations = {
