@@ -133,6 +133,7 @@
                   parallel
                   flatpak
                   libnotify
+                  slack
                 ];
                 imports = [
                   ./parts/vscode.nix
