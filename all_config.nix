@@ -5,7 +5,8 @@
 { config, pkgs, ... }:
 
 {
-
+# flakes
+ nix.settings.experimental-features = "nix-command flakes";
   # drivers
   # Bootloader.
 #  boot.loader.systemd-boot.enable = true;
