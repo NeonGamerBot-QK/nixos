@@ -26,6 +26,7 @@
           specialArgs = { inherit inputs; }; # this is the important part
           system = "x86_64-linux";
           modules = [
+             ./parts/firefox.nix
             ./all_config.nix
             ./parts/greetd.nix
             ./devices/pc/config.nix
@@ -145,6 +146,7 @@
                 home.file."/home/neon/.uptime-url" = {
                   text = ''<uptime-url-here> --extra-params'';
                 };
+                
   home.sessionVariables.NIXOS_OZONE_WL = "1";
 
                 home.pointerCursor = {

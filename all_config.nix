@@ -138,6 +138,10 @@ boot.loader.efi.efiSysMountPoint = "/boot";
     wakatime
     hyprlock
     screen
+    tor
+    tor-browser
+    i2p
+    onionshare-gui
     #ruby-dev
    # ruby    
   ];
