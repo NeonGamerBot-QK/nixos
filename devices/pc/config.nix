@@ -4,7 +4,7 @@
   imports =
     [
       # Include the results of the hardware scan.
-      ../../pc-configuration.nix
+      ../../hardware/pc.nix
     ];
   # corsair
   hardware.ckb-next.enable = true;
