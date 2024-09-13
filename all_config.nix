@@ -7,17 +7,22 @@
 {
 # flakes
  nix.settings.experimental-features = "nix-command flakes";
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
+
   # drivers
-  # Bootloader.
-#  boot.loader.systemd-boot.enable = true;
- # boot.loader.efi.canTouchEfiVariables = true;
-boot.loader.systemd-boot.enable = false;
-boot.loader.grub.enable = true;
-boot.loader.grub.device = "nodev";
-boot.loader.grub.useOSProber = true;
-boot.loader.grub.efiSupport = true;
-boot.loader.efi.canTouchEfiVariables = true;
-boot.loader.efi.efiSysMountPoint = "/boot";
+   imports =
+    [
+      # Include the results of the hardware scan.
+      ./parts/main/pkgs.nix
+      ./parts/main/boot.nix
+      ./parts/main/i8n.nix
+      ./parts/main/services.nix
+      ## Users
+      ./parts/users/neon.nix
+      ./parts/users/zeon.nix
+    ];
+  
 #  boot.loader.grub.theme = pkgs.stdenv.mkDerivation {
 #   pname = "distro-grub-themes";
 #   version = "3.1";
@@ -43,108 +48,17 @@ boot.loader.efi.efiSysMountPoint = "/boot";
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-  # Enable networking
-  networking.networkmanager.enable = true;
 
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "en_US.UTF-8";
-    LC_IDENTIFICATION = "en_US.UTF-8";
-    LC_MEASUREMENT = "en_US.UTF-8";
-    LC_MONETARY = "en_US.UTF-8";
-    LC_NAME = "en_US.UTF-8";
-    LC_NUMERIC = "en_US.UTF-8";
-    LC_PAPER = "en_US.UTF-8";
-    LC_TELEPHONE = "en_US.UTF-8";
-    LC_TIME = "en_US.UTF-8";
-  };
-
-
-  #	programs.sway.enable = true;
-  security.polkit.enable = true;
-  hardware.opengl.enable = true;
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-  programs.hyprland.enable = true;
-  # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    #media-session.enable = true;
-  };
-
-  users.users.neon.openssh.authorizedKeys.keys = [
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCyR5h39m2I9Odh5MzxdIWdV0bLbo+UEpzj3qgjngCwufhSqBlM3Utp1BRQknKA4Nk70vKB/FpdzOih0mOzye2SII9vRYtZmP+3VmZ32K0U0O5SDgpCTeIadtDjEHC4tcLg4zWJigKRLI1TYaAYeI5aD9BxVMJ7S1MOGL52OMJBiiSk2yWox/MdTcFoA0q3QbCCELTzPvrnbVZM8rxxiJnXXxU3pyQ+S07Ax4ENKky9O6p8VuFOAmUI7Jc/s3xQ8y4PlI8rxKH8j0lBrxmgNq0pRAQGTaGzh4xyyoOo3nUAdEtwgXfZDVtNkAepcpYBKHzs8StABr/kROgAJn6Oj9PKJ5zTj2pefZvWcyziPZaI/RiFEyh53SlxTdUJgbA68RAeYTRScirgnnbuiFJdGFoKJJeJby4dKriMbwUpI3rHlCCNGWgqe13cYbLGcZ13z9+bGczozOpbTCBW1nY0wdTjv+KtjxoFyavCd0UagBAowjS94DpG025ksxU3Xtaeg6c="
-  ];
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.neon = {
-    isNormalUser = true;
-    description = "Neon ;3";
-    extraGroups = [ "networkmanager" "wheel" ];
-    hashedPassword = "$y$j9T$qzfdCskx/alpliRS9UXiT1$DaqY3cNO3/ll1uIYFtfKiEZBijj.OhhazOs85clr6T5";
-    packages = with pkgs; [
-      thunderbird
-    ];
-   ignoreShellProgramCheck = true;
-    shell = pkgs.zsh;
-  };
   programs.zsh.interactiveShellInit = ''
       # z - jump around
       source ${pkgs.fetchurl {url = "https://github.com/rupa/z/raw/2ebe419ae18316c5597dd5fb84b5d8595ff1dde9/z.sh"; sha256 = "0ywpgk3ksjq7g30bqbhl9znz3jh6jfg8lxnbdbaiipzgsy41vi10";}}
       export ZSH=${pkgs.oh-my-zsh}/share/oh-my-zsh
-      export ZSH_THEME="random"
-      plugins=(git)
       source $ZSH/oh-my-zsh.sh
     '';
   programs.zsh.promptInit = "";
-  # Install firefox.
-  programs.firefox.enable = true;
-  programs.waybar.enable = true;
-  # programs.rofi.enable = true;
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget
-    spotify
-    kitty
-    unzip
-    zip
-    neofetch
-    fastfetch
-    rofi
-    wofi
-    waybar
-    playerctl
-    git
-    tailscale
-    gnupg
-    oh-my-zsh
-    cron
-    jq
-    lm_sensors
-    github-desktop
-    gnome-keyring
-    wakatime
-    hyprlock
-    screen
-    tor
-    tor-browser
-    i2p
-    onionshare-gui
-    #ruby-dev
-   # ruby    
-  ];
+ 
+
   environment.etc = {
   "xdg/gtk-2.0/gtkrc".text = "gtk-error-bell=0";
   "xdg/gtk-3.0/settings.ini".text = ''
@@ -156,6 +70,7 @@ boot.loader.efi.efiSysMountPoint = "/boot";
     gtk-error-bell=false
   '';
 };
+
   services.cron = {
     enable = true;
     systemCronJobs = [
@@ -163,14 +78,8 @@ boot.loader.efi.efiSysMountPoint = "/boot";
       "* * * * * echo e > /home/neon/.cron-job"
     ];
   };
-    programs.nix-ld.enable = true;
 
-  services.passSecretService.enable = true;
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  programs.mtr.enable = true;
-  # programs.gnupg.agent.enable = true;
-
+ 
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
@@ -187,11 +96,6 @@ boot.loader.efi.efiSysMountPoint = "/boot";
 
     ];
   };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
 
 
   # This value determines the NixOS release from which the default

@@ -26,9 +26,9 @@
           specialArgs = { inherit inputs; }; # this is the important part
           system = "x86_64-linux";
           modules = [
-             ./parts/firefox.nix
+             ./parts/home/firefox.nix
             ./all_config.nix
-            ./parts/greetd.nix
+            ./parts/home/greetd.nix
             ./devices/pc/config.nix
              catppuccin.nixosModules.catppuccin
              {
@@ -139,9 +139,9 @@
                   slack
                 ];
                 imports = [
-                  ./parts/vscode.nix
-                  ./parts/waybar.nix
-                  ./parts/oh-my-zsh.nix
+                  ./parts/home/vscode.nix
+                  ./parts/home/waybar.nix
+                  ./parts/home/oh-my-zsh.nix
                 ];
                 home.file."/home/neon/.uptime-url" = {
                   text = ''<uptime-url-here> --extra-params'';
