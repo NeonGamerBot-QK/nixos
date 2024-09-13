@@ -18,6 +18,7 @@
       ./parts/main/boot.nix
       ./parts/main/i8n.nix
       ./parts/main/services.nix
+      ./parts/main/direnv.nix
       ## Users
       ./parts/users/neon.nix
       ./parts/users/zeon.nix
