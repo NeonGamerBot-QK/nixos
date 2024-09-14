@@ -7,7 +7,7 @@
       "workbench.colorTheme" = "Catppuccin Mocha";
       # font
       "editor.fontSize" = 15;
-      "editor.fontFamily" = "Fira Code";
+      "editor.fontFamily" = "Joy pixels";
       "editor.fontLigatures" = true;
       "editor.fontWeight" = "500";
       # Editor
@@ -24,7 +24,35 @@
       "workbench.list.smoothScrolling" = true;
       "editor.renderWhitespace" = "all";
     };
-      extensions = pkgs.vscode-utils.extensionsFromVscodeMarketplace
-     [];
+      extensions = with pkgs.vscode-extensions; [
+               # vscode-extensions here since they dont work in ./parts/vscode
+                   ## Themes
+      catppuccin.catppuccin-vsc
+      catppuccin.catppuccin-vsc-icons
+      ## Git
+     eamodio.gitlens
+
+      ## Nix
+     jnoortheen.nix-ide
+
+      ## C/C++
+     ms-vscode.cpptools
+
+      ## Go
+     golang.go
+
+      ## Rust
+     rust-lang.rust-analyzer
+     tamasfe.even-better-toml
+
+      ## Markdown
+     yzhang.markdown-all-in-one
+      ## Misc
+     mkhl.direnv
+     editorconfig.editorconfig
+     esbenp.prettier-vscode
+     usernamehw.errorlens
+     github.copilot
+  ];
   };
 }

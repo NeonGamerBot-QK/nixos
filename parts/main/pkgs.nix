@@ -33,6 +33,10 @@
     tor-browser
     i2p
     onionshare-gui
+    wine
+    gnome-tweaks
+                  vscode
+
     #ruby-dev
    # ruby    
   ];

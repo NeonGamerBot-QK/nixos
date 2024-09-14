@@ -108,36 +108,7 @@
                   # social media 
                   vesktop
                   zoom-us
-                  vscode
-                 # vscode-extensions here since they dont work in ./parts/vscode
-                   ## Themes
-       vscode-extensions.catppuccin.catppuccin-vsc
-       vscode-extensions.catppuccin.catppuccin-vsc-icons
-      ## Git
-      vscode-extensions.eamodio.gitlens
-
-      ## Nix
-      vscode-extensions.jnoortheen.nix-ide
-
-      ## C/C++
-      vscode-extensions.ms-vscode.cpptools
-
-      ## Go
-      vscode-extensions.golang.go
-
-      ## Rust
-      vscode-extensions.rust-lang.rust-analyzer
-      vscode-extensions.tamasfe.even-better-toml
-
-      ## Markdown
-      vscode-extensions.yzhang.markdown-all-in-one
-
-      ## Misc
-      vscode-extensions.mkhl.direnv
-      vscode-extensions.editorconfig.editorconfig
-      vscode-extensions.esbenp.prettier-vscode
-      vscode-extensions.usernamehw.errorlens
-      vscode-extensions.github.copilot
+    
                   # basic sysadmin stuff
                   jq # json parsing
                   psmisc # processes
@@ -174,6 +145,8 @@
                   flatpak
                   libnotify
                   slack
+                  lunar-client
+                  firefox-devedition
                     font-awesome
       input-fonts
       joypixels
@@ -184,6 +157,7 @@
                   ./parts/home/waybar.nix
                   ./parts/home/oh-my-zsh.nix
                   ./parts/home/bat.nix
+              ./parts/home/vscode.nix
                 ];
                 home.file."/home/neon/.uptime-url" = {
                   text = ''<uptime-url-here> --extra-params'';

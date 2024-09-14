@@ -19,10 +19,11 @@
       ./parts/main/pkgs.nix
       ./parts/main/boot.nix
       ./parts/main/i8n.nix
+
       ./parts/main/services.nix
       ./parts/main/direnv.nix
      # TODO FIX FIREFOX =(
-     #  ./parts/home/firefox.nix { inherit firefox-addons; }
+       ./parts/home/firefox.nix { inherit firefox-addons; }
 
       ## Users
       ./parts/users/neon.nix

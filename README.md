@@ -15,10 +15,10 @@ if you do use it change [this](./all_config.nix) file to change the hashed passw
 
 ## Features
 
-**Waybar** (currently font broken) <br />
-**Vscode auto-load** (also broken sorta)
+**Waybar** ~~(currently font broken)~~ <br />
+**Vscode auto-load** ~~(also broken sorta)~~
 <br />
-**Oh-my-zsh** (not configed)
+**Oh-my-zsh** ~~(not configed)~~
 <br />
 **Flake nix** (i have no idea what im doing)
 <br />
