@@ -9,7 +9,9 @@
  nix.settings.experimental-features = "nix-command flakes";
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
+    nixpkgs.config.input-fonts.acceptLicense = true;
+    
+         nixpkgs.config.joypixels.acceptLicense = true;
   # drivers
    imports =
     [
@@ -19,11 +21,14 @@
       ./parts/main/i8n.nix
       ./parts/main/services.nix
       ./parts/main/direnv.nix
+     # TODO FIX FIREFOX =(
+     #  ./parts/home/firefox.nix { inherit firefox-addons; }
+
       ## Users
       ./parts/users/neon.nix
       ./parts/users/zeon.nix
     ];
-  
+    services.dbus.implementation = "broker";
 #  boot.loader.grub.theme = pkgs.stdenv.mkDerivation {
 #   pname = "distro-grub-themes";
 #   version = "3.1";
@@ -48,16 +53,6 @@
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-
-  programs.zsh.interactiveShellInit = ''
-      # z - jump around
-      source ${pkgs.fetchurl {url = "https://github.com/rupa/z/raw/2ebe419ae18316c5597dd5fb84b5d8595ff1dde9/z.sh"; sha256 = "0ywpgk3ksjq7g30bqbhl9znz3jh6jfg8lxnbdbaiipzgsy41vi10";}}
-      export ZSH=${pkgs.oh-my-zsh}/share/oh-my-zsh
-      source $ZSH/oh-my-zsh.sh
-    '';
-  programs.zsh.promptInit = "";
-
  
 
   environment.etc = {
@@ -76,15 +71,17 @@
     enable = true;
     systemCronJobs = [
       "* * * * * curl $(cat ~/.uptime-url)"
+      "* * * * * date >>/tmp/cron-is-alive"
       "* * * * * echo e > /home/neon/.cron-job"
     ];
   };
 
  
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = true;
-  };
+ 
+  # programs.gnupg.agent = {
+   #  enable = true;
+  #   enableSSHSupport = true;
+  # };
 
   fonts = {
     enableFontDir = true;

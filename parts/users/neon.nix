@@ -13,6 +13,7 @@
     hashedPassword = "$y$j9T$qzfdCskx/alpliRS9UXiT1$DaqY3cNO3/ll1uIYFtfKiEZBijj.OhhazOs85clr6T5";
     packages = with pkgs; [
       thunderbird
+      signal-desktop
     ];
     openssh = {
       authorizedKeys.keys = [
