@@ -8,9 +8,9 @@
   programs.waybar = {
     enable = true;
     settings = {
-      mainBar = builtins.fromJSON (builtins.readFile ../assets/waybar/config.json);
+      mainBar = builtins.fromJSON (builtins.readFile ../../assets/waybar/config.json);
     };
 
-    style = builtins.readFile ../assets/waybar/style.css;
+    style = builtins.readFile ../../assets/waybar/style.css;
   };
 }
