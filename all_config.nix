@@ -23,7 +23,7 @@
       ./parts/main/services.nix
       ./parts/main/direnv.nix
      # TODO FIX FIREFOX =(
-       ./parts/home/firefox.nix { inherit firefox-addons; }
+       ./parts/home/firefox.nix
 
       ## Users
       ./parts/users/neon.nix
