@@ -37,7 +37,11 @@
     gnome-tweaks
                   vscode
 
-    #ruby-dev
+
+shotman
+watershot
+flameshot
+grimblast
    # ruby    
   ];
 }
