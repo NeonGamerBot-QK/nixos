@@ -5,8 +5,9 @@
 [![wakatime](https://wakatime.com/badge/user/018eed1d-6093-4f51-9fca-7863b7a1ac97/project/0bd55e4d-b460-49e5-a4fb-363c132a7de6.svg)](https://wakatime.com/badge/user/018eed1d-6093-4f51-9fca-7863b7a1ac97/project/0bd55e4d-b460-49e5-a4fb-363c132a7de6)
 
 <!-- SCREENSHOTS OF IT HERE -->
+
 ![screenshot](./assets/screenshot.png)
- 
+
 <!-- END SCREENSHOTS -->
 
 My nixOS setup is just highly unstable theres not much to it.
