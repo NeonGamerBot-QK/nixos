@@ -159,9 +159,9 @@
                   ./parts/home/bat.nix
               ./parts/home/vscode.nix
                 ];
-                home.file."/home/neon/.uptime-url" = {
-                  text = ''<uptime-url-here> --extra-params'';
-                };
+            #    home.file."/home/neon/.uptime-url" = {
+             #     text = ''<uptime-url-here> --extra-params'';
+              #  };
                 
   home.sessionVariables.NIXOS_OZONE_WL = "1";
 

@@ -38,6 +38,7 @@
                   vscode
 grimblast
 nextdns
+bash
    # ruby    
   ];
 }

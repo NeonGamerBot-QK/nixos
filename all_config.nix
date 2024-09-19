@@ -25,7 +25,8 @@
       ./parts/main/nextdns.nix
      # TODO FIX FIREFOX =(
        ./parts/home/firefox.nix
-
+## Timers
+./parts/main/uptime.nix
       ## Users
       ./parts/users/neon.nix
       ./parts/users/zeon.nix
