@@ -22,6 +22,7 @@
 
       ./parts/main/services.nix
       ./parts/main/direnv.nix
+      ./parts/main/nextdns.nix
      # TODO FIX FIREFOX =(
        ./parts/home/firefox.nix
 

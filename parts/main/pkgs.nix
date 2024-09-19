@@ -36,12 +36,8 @@
     wine
     gnome-tweaks
                   vscode
-
-
-shotman
-watershot
-flameshot
 grimblast
+nextdns
    # ruby    
   ];
 }
