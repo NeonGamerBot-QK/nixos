@@ -3,8 +3,7 @@
     enable = true;
     shellAliases = {
       vim = "nvim";
-    # cant figure out ruby atm
-    # ls = "colorls --human-readable --hyperlink --gs --sort-dirs -1";
+     ls = "colorls --human-readable --hyperlink --gs --sort-dirs -1";
       lc = "ls -lA --sd";
       la ="ls -a";
       ll ="ls -l";
@@ -17,7 +16,7 @@
       eis = "screen -d -m";
     };
     enableCompletion = true;
- autosuggestion.enable = true;
+   autosuggestion.enable = true;
   oh-my-zsh = {
     enable = true;
     plugins = [ "git" "gitignore" "dotenv" "brew" "npm" "yarn" "history" "vscode" "nvm" "command-not-found" "colorize" "common-aliases" "emoji" "emoji-clock" "screen" "pre-commit" "genpass" "web-search" "sudo" "themes" ];

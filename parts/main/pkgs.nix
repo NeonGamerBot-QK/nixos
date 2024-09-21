@@ -41,6 +41,7 @@ nextdns
 bash
 just
 catppuccin-cursors.mochaMauve
+colorls
    # ruby    
   ];
 }
