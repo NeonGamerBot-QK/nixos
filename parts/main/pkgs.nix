@@ -40,6 +40,7 @@ grimblast
 nextdns
 bash
 just
+catppuccin-cursors.mochaMauve
    # ruby    
   ];
 }
