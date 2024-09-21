@@ -58,7 +58,7 @@
           modules = [
             ./all_config.nix
       # ./parts/main/gtk.nix
-
+./parts/home/steam.nix
                 # For home-manager
     inputs.spicetify-nix.nixosModules.default
             # { inherit firefox-addons; }
