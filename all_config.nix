@@ -14,7 +14,7 @@
          nixpkgs.config.joypixels.acceptLicense = true;
   # drivers
   hardware.nvidia.open=false;
-hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
+ hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
  services.xserver.videoDrivers = [ "nvidia" ];
    imports =
     [

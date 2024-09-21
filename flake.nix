@@ -11,7 +11,11 @@
     hyprland.url = "github:hyprwm/Hyprland?submodules=1";
     nixpkgs-ruby.url = "github:bobvanderlinden/nixpkgs-ruby";
       # create an input called spicetify-nix, and set its url to this repository
-  spicetify-nix.url = "github:the-argus/spicetify-nix";
+  # spicetify-nix.url = "github:the-argus/spicetify-nix";
+     spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
         nix-index-database = {
       url = "github:Mic92/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -44,7 +48,7 @@
         nixosPC = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
 # home-manager.extraSpecialArgs = { inherit firefox-addons; };
-
+#  extraSpecialArgs = {inherit inputs;};
            specialArgs = { inherit inputs; 
             inherit firefox-addons;
             inherit spicetify-nix;
@@ -53,10 +57,13 @@
     
           modules = [
             ./all_config.nix
+                # For home-manager
+    inputs.spicetify-nix.nixosModules.default
             # { inherit firefox-addons; }
             ./parts/home/greetd.nix
             ./devices/pc/config.nix
             ./parts/home/spicetify.nix
+
              catppuccin.nixosModules.catppuccin
              {
                catppuccin.enable = true;
@@ -113,7 +120,6 @@
                   # social media 
                   vesktop
                   zoom-us
-    
                   # basic sysadmin stuff
                   jq # json parsing
                   psmisc # processes
@@ -162,6 +168,7 @@
                   ./parts/home/waybar.nix
                   ./parts/home/oh-my-zsh.nix
                   ./parts/home/bat.nix
+
                 ];
             #    home.file."/home/neon/.uptime-url" = {
              #     text = ''<uptime-url-here> --extra-params'';
