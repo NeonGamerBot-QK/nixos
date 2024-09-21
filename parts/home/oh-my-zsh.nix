@@ -17,7 +17,7 @@
       eis = "screen -d -m";
     };
     enableCompletion = true;
-    enableAutosuggestions = true;
+ autosuggestion.enable = true;
   oh-my-zsh = {
     enable = true;
     plugins = [ "git" "gitignore" "dotenv" "brew" "npm" "yarn" "history" "vscode" "nvm" "command-not-found" "colorize" "common-aliases" "emoji" "emoji-clock" "screen" "pre-commit" "genpass" "web-search" "sudo" "themes" ];

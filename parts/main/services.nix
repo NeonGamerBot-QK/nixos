@@ -7,7 +7,7 @@
   services.openssh.enable = true;
   #	programs.sway.enable = true;
   security.polkit.enable = true;
-  hardware.opengl.enable = true;
+  hardware.graphics.enable = true;
   # Enable CUPS to print documents.
   services.printing.enable = true;
   programs.hyprland.enable = true;

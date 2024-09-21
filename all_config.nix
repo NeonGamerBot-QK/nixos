@@ -94,8 +94,10 @@
   # };
 
   fonts = {
-    enableFontDir = true;
-    fonts = with pkgs; [
+    fontDir = {
+      enable = true;
+    };
+    packages = with pkgs; [
       corefonts # Microsoft free fonts
       fira # Monospace
       unifont # International languages
