@@ -42,6 +42,14 @@ bash
 just
 catppuccin-cursors.mochaMauve
 colorls
+gtk4
+catppuccin
+catppuccin-kde
+catppuccin-gtk
+catppuccin-catwalk
+catppuccinifier-gui
+
+
    # ruby    
   ];
 }

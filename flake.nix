@@ -57,7 +57,7 @@
     
           modules = [
             ./all_config.nix
-      # ./parts/main/gtk.nix
+#sudo        ./parts/main/gtk.nix
 ./parts/home/steam.nix
                 # For home-manager
     inputs.spicetify-nix.nixosModules.default
@@ -93,12 +93,23 @@
         disable-ccid = true;
       };
     };
+      qt = {
+    enable = true;
+    platformTheme = "qtct";
+    style.name = "kvantum";
+  };
  #     gtk = {
   #          enable = true;
  #   gtk3.extraConfig = { gtk-application-prefer-dark-theme = true; };
    # gtk4.extraConfig = { gtk-application-prefer-dark-theme = true; };
   #    };
                 home.packages = with pkgs; [
+                   (catppuccin-kvantum.override {
+      accent = "Mauve";
+      variant = "Mocha";
+    })
+    libsForQt5.qtstyleplugin-kvantum
+    libsForQt5.qt5ct
                   thunderbird
                   mako
                   wl-clipboard
