@@ -16,3 +16,6 @@ clean target:
 cm:
     git add .
     git commit -m 'chore: automated commit zeon:ai_comment'
+
+dirty:
+    git add .

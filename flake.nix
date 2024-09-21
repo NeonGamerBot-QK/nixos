@@ -57,6 +57,8 @@
     
           modules = [
             ./all_config.nix
+      # ./parts/main/gtk.nix
+
                 # For home-manager
     inputs.spicetify-nix.nixosModules.default
             # { inherit firefox-addons; }
@@ -68,6 +70,7 @@
              {
                catppuccin.enable = true;
                catppuccin.flavor = "mocha";
+               catppuccin.accent = "mauve";
              }
             home-manager.nixosModules.home-manager
             {
@@ -90,11 +93,11 @@
         disable-ccid = true;
       };
     };
-      gtk = {
-            enable = true;
-    gtk3.extraConfig = { gtk-application-prefer-dark-theme = true; };
-    gtk4.extraConfig = { gtk-application-prefer-dark-theme = true; };
-      };
+ #     gtk = {
+  #          enable = true;
+ #   gtk3.extraConfig = { gtk-application-prefer-dark-theme = true; };
+   # gtk4.extraConfig = { gtk-application-prefer-dark-theme = true; };
+  #    };
                 home.packages = with pkgs; [
                   thunderbird
                   mako
@@ -177,17 +180,17 @@
   home.sessionVariables.NIXOS_OZONE_WL = "1";
   
 
-  home.sessionVariables.GTK_THEME = "Catppuccin-Mocha-Standard-Blue-Dark";
+ # home.sessionVariables.GTK_THEME = "Catppuccin-Mocha-Standard-Blue-Dark";
 
 
-                home.pointerCursor = {
-                  gtk.enable = true;
-                  x11.enable = true;
+             #   // home.pointerCursor = {
+              #  //   gtk.enable = true;
+              #  //   x11.enable = true;
 
-                  package = pkgs.material-cursors;
-                  name = "material_cursors";
-                  size = 24;
-                };
+#                //   package = pkgs.material-cursors;
+ #               //   name = "material_cursors";
+  #              //   size = 24;
+   #             // };
                 home.stateVersion = "23.11";
               };
             }
