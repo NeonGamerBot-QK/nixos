@@ -23,5 +23,5 @@ jobs:
       - name: flake checker
         uses: DeterminateSystems/flake-checker-action@main
         with:
-            fail-mode: true
+          fail-mode: true
       - run: nix flake check
