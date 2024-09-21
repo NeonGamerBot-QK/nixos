@@ -13,6 +13,9 @@
     
          nixpkgs.config.joypixels.acceptLicense = true;
   # drivers
+  hardware.nvidia.open=false;
+hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
+ services.xserver.videoDrivers = [ "nvidia" ];
    imports =
     [
       # Include the results of the hardware scan.
@@ -69,15 +72,19 @@
     gtk-error-bell=false
   '';
 };
+# try gtk
 
-  services.cron = {
-    enable = true;
-    systemCronJobs = [
-      "* * * * * curl $(cat ~/.uptime-url)"
-      "* * * * * date >>/tmp/cron-is-alive"
-      "* * * * * echo e > /home/neon/.cron-job"
-    ];
-  };
+ # gtk = {
+ #   catppuccin = {
+ #     enable = true;
+ #     flavor = "mocha";
+ #     accent = "mauve";
+ #     size = "standard";
+ #     icon = {
+ #       enable = true;
+ #     };
+ #   };
+ # };
 
  
  

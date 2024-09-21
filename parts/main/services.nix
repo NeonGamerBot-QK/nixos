@@ -25,5 +25,5 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-
+  services.tor.enable = true;
 }

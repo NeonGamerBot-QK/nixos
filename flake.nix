@@ -10,6 +10,8 @@
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     hyprland.url = "github:hyprwm/Hyprland?submodules=1";
     nixpkgs-ruby.url = "github:bobvanderlinden/nixpkgs-ruby";
+      # create an input called spicetify-nix, and set its url to this repository
+  spicetify-nix.url = "github:the-argus/spicetify-nix";
         nix-index-database = {
       url = "github:Mic92/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -35,6 +37,7 @@
     , catppuccin
     ,  nixpkgs-ruby  
     , firefox-addons
+    , spicetify-nix
     , ...
   }: {
       nixosConfigurations = {
@@ -44,6 +47,7 @@
 
            specialArgs = { inherit inputs; 
             inherit firefox-addons;
+            inherit spicetify-nix;
               }; # this is the important part
           # extraSpecialArgs = { inherit inputs; }; # this is the important part
     
@@ -52,6 +56,7 @@
             # { inherit firefox-addons; }
             ./parts/home/greetd.nix
             ./devices/pc/config.nix
+            ./parts/home/spicetify.nix
              catppuccin.nixosModules.catppuccin
              {
                catppuccin.enable = true;
@@ -157,13 +162,16 @@
                   ./parts/home/waybar.nix
                   ./parts/home/oh-my-zsh.nix
                   ./parts/home/bat.nix
-              ./parts/home/vscode.nix
                 ];
             #    home.file."/home/neon/.uptime-url" = {
              #     text = ''<uptime-url-here> --extra-params'';
               #  };
                 
   home.sessionVariables.NIXOS_OZONE_WL = "1";
+  
+
+  home.sessionVariables.GTK_THEME = "Catppuccin-Mocha-Standard-Blue-Dark";
+
 
                 home.pointerCursor = {
                   gtk.enable = true;

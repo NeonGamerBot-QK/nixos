@@ -25,7 +25,7 @@
       "editor.renderWhitespace" = "all";
     };
       extensions = with pkgs.vscode-extensions; [
-               # vscode-extensions here since they dont work in ./parts/vscode
+               # vscode-extensions here 
                    ## Themes
       catppuccin.catppuccin-vsc
       catppuccin.catppuccin-vsc-icons
@@ -53,6 +53,7 @@
      esbenp.prettier-vscode
      usernamehw.errorlens
      github.copilot
+     skellock.just
   ];
   };
 }

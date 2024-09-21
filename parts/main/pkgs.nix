@@ -39,6 +39,7 @@
 grimblast
 nextdns
 bash
+just
    # ruby    
   ];
 }
