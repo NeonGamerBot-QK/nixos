@@ -4,7 +4,7 @@ on:
     - cron: "*/120 * * * *"
   workflow_dispatch:
 
-permissions: {}
+permissions: write-all
 
 jobs:
   get-flake-inputs:
@@ -41,10 +41,9 @@ jobs:
       - uses: cpcloud/flake-update-action@v2.0.1
         with:
           dependency: ${{ matrix.flake }}
-          pull-request-token: ${{ secrets.ZEON_USER_TOKEN }}
+          pull-request-token: ${{ secrets.GITHUB_TOKEN }}
           pull-request-author: Zeon <zeon@saahild.com>
           delete-branch: true
           github-token: ${{ secrets.ZEON_USER_TOKEN }}
           pull-request-branch-prefix: update-
           automerge: true
-          signoff: true
