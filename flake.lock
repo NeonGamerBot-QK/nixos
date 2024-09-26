@@ -453,11 +453,11 @@
         "nixpkgs": ["nixpkgs"]
       },
       "locked": {
-        "lastModified": 1726805771,
-        "narHash": "sha256-3zS5yxFRoRkzrJN7uih1ktaCrXlFqcav39Yh41UC0Vs=",
+        "lastModified": 1727343412,
+        "narHash": "sha256-Uoxb8Qr1bQp05SQIcAYCOfzImOJXIbWk4chTfxsd/us=",
         "owner": "Gerg-L",
         "repo": "spicetify-nix",
-        "rev": "dae2f7693f2e2e39007199778e5d7737c48d4c78",
+        "rev": "2f429398aef267d98858ca98d2f2a38a8ee90fb3",
         "type": "github"
       },
       "original": {
