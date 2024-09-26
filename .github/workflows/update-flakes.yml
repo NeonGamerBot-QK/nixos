@@ -44,6 +44,6 @@ jobs:
           pull-request-token: ${{ secrets.PAT }}
           pull-request-author: Zeon <zeon@saahild.com>
           delete-branch: true
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.ZEON_USER_TOKEN }}
           pull-request-branch-prefix: update-
           automerge: true
