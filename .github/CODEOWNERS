@@ -31,7 +31,7 @@ all_config.nix @NeonGamerBot-QK
 
 all_config.nix @NeonGamerBot-QK
 all_config.nix @NeonGamerBot-QK
-flake.lock @NeonGamerBot-QK
+flake.lock @NeonGamerBot-QK @zeon-neon
 flake.nix @NeonGamerBot-QK
 scripts/cleanup_boot_pc.sh @NeonGamerBot-QK
 scripts/cleanup_old.sh @NeonGamerBot-QK
