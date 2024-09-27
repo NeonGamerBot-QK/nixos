@@ -33,6 +33,7 @@
       ## Users
       ./parts/users/neon.nix
       ./parts/users/zeon.nix
+      ./parts/main/i2p.nix
     ];
     services.dbus.implementation = "broker";
 #  boot.loader.grub.theme = pkgs.stdenv.mkDerivation {
