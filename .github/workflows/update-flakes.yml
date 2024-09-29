@@ -1,7 +1,7 @@
 name: update-flakes
 on:
   schedule:
-    - cron: "*/360 * * * *"
+    - cron: "*/360 */12 * * *"
   workflow_dispatch:
 
 permissions: write-all
