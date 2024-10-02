@@ -10,8 +10,8 @@
   hardware.ckb-next.enable = true;
 #  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable; 
 #  services.xserver.videoDrivers = [ "nvidia" ]; 
-
-  networking.hostName = "nixos"; # Define your hostname.
+# Means dynasty
+  networking.hostName = "dainasuti"; # Define your hostname.
 
   # Set your time zone.
   time.timeZone = "America/New_York";
