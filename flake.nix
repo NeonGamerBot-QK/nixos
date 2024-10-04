@@ -45,7 +45,7 @@
     , ...
   }: {
       nixosConfigurations = {
-        nixosPC = nixpkgs.lib.nixosSystem {
+        dainasuti = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
 # home-manager.extraSpecialArgs = { inherit firefox-addons; };
 #  extraSpecialArgs = {inherit inputs;};
@@ -181,16 +181,14 @@
                   ./parts/home/vscode.nix
                   ./parts/home/waybar.nix
                   ./parts/home/oh-my-zsh.nix
-                  ./parts/home/bat.nix
-
+                  ./parts/home/bat.nix 
+                  ./parts/home/nvim.nix
                 ];
             #    home.file."/home/neon/.uptime-url" = {
              #     text = ''<uptime-url-here> --extra-params'';
               #  };
                 
   home.sessionVariables.NIXOS_OZONE_WL = "1";
-  
-
  # home.sessionVariables.GTK_THEME = "Catppuccin-Mocha-Standard-Blue-Dark";
 
 
