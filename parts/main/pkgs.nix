@@ -50,7 +50,7 @@ catppuccin-catwalk
 catppuccinifier-gui
 #https://discourse.nixos.org/t/command-not-found-not-working/24023/5
 sqlite
-
+texliveTeTeX
    # ruby    
   ];
 }
