@@ -22,6 +22,12 @@
     userName = "Neon";
     userEmail = "neon@saahild.com";
   };
+  environment.systemPackages = with pkgs; [
+    # Install some packages only for this machine
+    lm_sensors
+  catppuccinifier-gui
+texliveTeTeX
+  ];
 
 
 

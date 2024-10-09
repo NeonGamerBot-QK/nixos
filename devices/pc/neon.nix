@@ -108,27 +108,16 @@
       (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
                 ];
              imports = [
-                  ../../home/vscode.nix
-                  ../../home/waybar.nix
-                  ../../home/oh-my-zsh.nix
-                  ../../home/bat.nix 
-                  ../../home/nvim.nix
+                  ../../parts/home/vscode.nix
+                  ../../parts/home/waybar.nix
+                  ../../parts/home/oh-my-zsh.nix
+                  ../../parts/home/bat.nix 
+                  ../../parts/home/nvim.nix
                 ];
             #    home.file."/home/neon/.uptime-url" = {
              #     text = ''<uptime-url-here> --extra-params'';
               #  };
                 
   home.sessionVariables.NIXOS_OZONE_WL = "1";
- # home.sessionVariables.GTK_THEME = "Catppuccin-Mocha-Standard-Blue-Dark";
-
-
-             #   // home.pointerCursor = {
-              #  //   gtk.enable = true;
-              #  //   x11.enable = true;
-
-#                //   package = pkgs.material-cursors;
- #               //   name = "material_cursors";
-  #              //   size = 24;
-   #             // };
                 home.stateVersion = "23.11";
               }

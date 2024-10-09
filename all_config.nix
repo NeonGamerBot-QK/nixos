@@ -24,36 +24,20 @@
       ./parts/main/i8n.nix
 
       ./parts/main/services.nix
-      ./parts/main/direnv.nix
-      ./parts/main/nextdns.nix
+     ./parts/main/direnv.nix
+     ./parts/main/nextdns.nix
+     ./parts/main/i2p.nix
+
      # TODO FIX FIREFOX =(
        ./parts/home/firefox.nix
 ## Timers
 ./parts/main/uptime.nix
       ## Users
-      ./parts/users/neon.nix
+     ./parts/users/neon.nix
       ./parts/users/zeon.nix
-      ./parts/main/i2p.nix
     ];
     services.dbus.implementation = "broker";
-#  boot.loader.grub.theme = pkgs.stdenv.mkDerivation {
-#   pname = "distro-grub-themes";
-#   version = "3.1";
-#   src = pkgs.fetchFromGitHub {
-#     owner = "AdisonCavani";
-#     repo = "distro-grub-themes";
-#     rev = "v3.1";
-#   }; 
-#   installPhase = "cp -r customize/nixos $out";
-# };
-#  boot.loader.grub.theme = "${
- #           (pkgs.fetchFromGitHub {
-  #            owner = "13atm01";
-   #           repo = "GRUB-Theme";
-    #          rev = "95bcc240162bce388ac2c0bec628b2aaa56e6cb8";
-     #         sha256 = "0xnx82fdyjqw89qmacwmlva9lis3zs8b0l1xi67njpypjy29sdnc";
-      #      })
-     #     }/Touhou\ Project/Touhou-project/";
+
   # enable grub (im cooked if this dosent work)
   # @see https://discourse.nixos.org/t/configure-grub-on-efi-system/2926/3
 

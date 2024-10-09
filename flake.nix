@@ -63,11 +63,12 @@
           modules = [
             ./all_config.nix
 ./parts/home/steam.nix
+            ./parts/home/spicetify.nix
+
                 # For home-manager
     inputs.spicetify-nix.nixosModules.default
             ./parts/home/greetd.nix
             ./devices/pc/config.nix
-            ./parts/home/spicetify.nix
 
              catppuccin.nixosModules.catppuccin
              {
@@ -81,10 +82,31 @@
               home-manager.backupFileExtension = "hm-bak";
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users.neon = import ./parts/users/home/neon.nix;
+              home-manager.users.neon = import ./devices/pc/neon.nix;
             }
           ];
         };
+
+      };
+      kurafuto = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+          specialArgs = inputs;  
+            modules = [
+            ./all_config.nix
+            catppuccin.nixosModules.catppuccin
+             {
+               catppuccin.enable = true;
+               catppuccin.flavor = "mocha";
+               catppuccin.accent = "mauve";
+             }
+               home-manager.nixosModules.home-manager
+           {
+              home-manager.backupFileExtension = "hm-bak";
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.neon = import ./devices/kurafuto/neon.nix;
+            }
+            ];
       };
     };
 }

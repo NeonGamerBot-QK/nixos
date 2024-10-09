@@ -1,5 +1,6 @@
 { pkgs, ... }:
 {
+  # TODO actualy fix
   systemd.timers."uptime" = {
   wantedBy = [ "timers.target" ];
     timerConfig = {
