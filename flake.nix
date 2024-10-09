@@ -16,6 +16,8 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+        # agenix
+    agenix.url = "github:ryantm/agenix";
         nix-index-database = {
       url = "github:Mic92/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -42,6 +44,7 @@
     ,  nixpkgs-ruby  
     , firefox-addons
     , spicetify-nix
+    , agenix
     , ...
   }: {
       nixosConfigurations = {
@@ -72,6 +75,7 @@
                catppuccin.flavor = "mocha";
                catppuccin.accent = "mauve";
              }
+              agenix.nixosModules.default
             home-manager.nixosModules.home-manager
             {
               home-manager.backupFileExtension = "hm-bak";
