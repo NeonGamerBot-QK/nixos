@@ -45,14 +45,7 @@
     };
   };
 
-#  inputs@{ self
-#    , nixpkgs
-#    , home-manager
-#    , catppuccin
-#    ,  nixpkgs-ruby  
-  #  , firefox-addons
- #   , ...
-#    }
+
   outputs = inputs@{
     nixpkgs
     , home-manager
@@ -66,21 +59,12 @@
       nixosConfigurations = {
         dainasuti = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-# home-manager.extraSpecialArgs = { inherit firefox-addons; };
-#  extraSpecialArgs = {inherit inputs;};
-           specialArgs = { inherit inputs; 
-            inherit firefox-addons;
-            inherit spicetify-nix;
-              }; # this is the important part
-          # extraSpecialArgs = { inherit inputs; }; # this is the important part
-    
+          specialArgs = inputs;    
           modules = [
             ./all_config.nix
-#sudo        ./parts/main/gtk.nix
 ./parts/home/steam.nix
                 # For home-manager
     inputs.spicetify-nix.nixosModules.default
-            # { inherit firefox-addons; }
             ./parts/home/greetd.nix
             ./devices/pc/config.nix
             ./parts/home/spicetify.nix
