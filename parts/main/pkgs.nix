@@ -12,7 +12,7 @@
     zip
     neofetch
     fastfetch
-    wofi
+    rofi
     waybar
     playerctl
     git
