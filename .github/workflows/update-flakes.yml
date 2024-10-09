@@ -1,7 +1,7 @@
 name: update-flakes
 on:
   schedule:
-    - cron: "*/360 */12 * * *"
+    - cron: "0 */12 * * *"
   workflow_dispatch:
 
 permissions: write-all
@@ -47,3 +47,4 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           pull-request-branch-prefix: update-
           automerge: true
+          pull-request-labels: "deps"
