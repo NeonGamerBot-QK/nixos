@@ -515,11 +515,11 @@
         "nixpkgs": "nixpkgs_5"
       },
       "locked": {
-        "lastModified": 1728552442,
-        "narHash": "sha256-B2rbdfHAu6NONuU+vv7eH0Wb0tv3okGTpLZHAh9e82Q=",
+        "lastModified": 1729327104,
+        "narHash": "sha256-GcPC256lG6TpNlBlQ+q7Cuia+R1lj9RCG2YFDdqWUsc=",
         "owner": "bobvanderlinden",
         "repo": "nixpkgs-ruby",
-        "rev": "2337dcf306fd3709463f360286c756e5d88bdac2",
+        "rev": "38d584e00a62b224abb22fffb41b179a21401bc8",
         "type": "github"
       },
       "original": {
