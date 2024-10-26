@@ -26,7 +26,7 @@
     platformTheme = {
       name = "qtct";
     };
-    style.name = "kvantum";
+     style.name = "kvantum";
   };
  #     gtk = {
   #          enable = true;
@@ -35,8 +35,8 @@
   #    };
                 home.packages = with pkgs; [
                    (catppuccin-kvantum.override {
-      accent = "Mauve";
-      variant = "Mocha";
+      accent = "mauve";
+      variant = "mocha";
     })
     libsForQt5.qtstyleplugin-kvantum
     libsForQt5.qt5ct
