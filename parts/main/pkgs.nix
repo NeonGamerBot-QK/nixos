@@ -37,6 +37,7 @@ colorls
 catppuccin
 catppuccin-gtk
 catppuccin-catwalk
+nixpkgs-fmt
    # ruby    
   ];
 }
