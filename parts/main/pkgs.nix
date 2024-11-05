@@ -38,6 +38,8 @@ catppuccin
 catppuccin-gtk
 catppuccin-catwalk
 nixpkgs-fmt
+wf-recorder
+
    # ruby    
   ];
 }
