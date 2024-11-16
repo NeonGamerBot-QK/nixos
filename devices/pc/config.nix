@@ -27,8 +27,10 @@
     lm_sensors
   catppuccinifier-gui
 texliveTeTeX
+docker
   ];
 
+  virtualisation.docker.enable = true;
 
 
   # Open ports in the firewall.
