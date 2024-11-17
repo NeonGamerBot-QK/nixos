@@ -10,7 +10,7 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
     nixpkgs.config.input-fonts.acceptLicense = true;
-    
+  nixpkgs.config.allowUnsupportedSystem = true;
          nixpkgs.config.joypixels.acceptLicense = true;
   # drivers
   hardware.nvidia.open=false;
