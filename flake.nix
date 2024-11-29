@@ -83,6 +83,8 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.neon = import ./devices/pc/neon.nix;
+              home.enableNixpkgsReleaseCheck = false;
+  
             }
           ];
         };

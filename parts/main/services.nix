@@ -27,4 +27,8 @@
   networking.networkmanager.enable = true;
   services.tor.enable = true;
    systemd.services.NetworkManager-wait-online.enable = false;
+services.ollama = {
+  enable = true;
+  acceleration = "cuda";
+};
 }

@@ -40,6 +40,7 @@ catppuccin-catwalk
 nixpkgs-fmt
 wf-recorder
 chromium
+ollama
    # ruby    
   ];
 }
