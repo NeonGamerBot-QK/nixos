@@ -24,6 +24,6 @@
     };
     home.packages = with pkgs; [
         joypixels
-      (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
+      # (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
     ]
 }

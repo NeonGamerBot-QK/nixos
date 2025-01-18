@@ -25,6 +25,7 @@
     hyprlock
     screen
     tor
+    torsocks
     tor-browser
     onionshare-gui
     wine
@@ -41,6 +42,8 @@ nixpkgs-fmt
 wf-recorder
 chromium
 ollama
+firefox
+zed-editor
    # ruby    
   ];
 }

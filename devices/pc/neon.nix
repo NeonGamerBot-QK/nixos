@@ -105,7 +105,7 @@
                     font-awesome
       input-fonts
       joypixels
-      (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
+     # (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
                 ];
              imports = [
                   ../../parts/home/vscode.nix
